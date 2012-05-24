@@ -1,0 +1,7 @@
+<form method="post" action="/permutations">
+  <% (1..@classifications).each do |c| %>
+    <label for="classifications">Clasificacion <%= c %></label>
+    <input type="text" name="classification<%= c %>" />
+  <% end %>
+  <input type="submit" />
+</form>
