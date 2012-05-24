@@ -1,16 +1,18 @@
-require "sinatra"
+require "nancy"
 
-class App < Sinatra::Base
+class App < Nancy::Base
+  include Nancy::Render
+
   get "/" do
-    erb :index
+    render("views/index.erb")
   end
 
   post "/classifications" do
-    @classifications = params[:classifications].to_i
-    erb :classifications
+    @classifications = params["classifications"].to_i
+    render("views/classifications.erb")
   end
 
   post "/permutations" do
-    erb :permutations
+    render("views/permutations.erb")
   end
 end
